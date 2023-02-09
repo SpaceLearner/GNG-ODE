@@ -3,9 +3,7 @@ This is the code for CIKM 2022 paper Evolutionary Preference Learning via Graph 
 
 ## Dataset
 
-We have provide the processed datasets. If you have want the original data please refer to the following link.
-
-Download and extract the following datasets and put the files in the dataset folder named under datasets/$DATASETNAME
+We have provided the processed datasets. If you want the original data please refer to the following links.
 
 * [Gowalla](http://snap.stanford.edu/data/loc-gowalla_totalCheckins.txt.gz)
 * [Tmall](https://github.com/CCIIPLab/GCE-GNN/tree/master/datasets/Tmall)
@@ -13,9 +11,6 @@ Download and extract the following datasets and put the files in the dataset fol
 
 ## Environment
 
-```
-
-```
 
 
 ## Usage

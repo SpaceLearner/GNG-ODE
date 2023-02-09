@@ -25,38 +25,6 @@ def label_last_k(g, last_nids):
     g.nodes['s1'].data['last'] = is_last
     return g
 
-def seq_to_eop_multigraph(seq):
-    items = np.unique(seq)
-    iid2nid = {iid: i for i, iid in enumerate(items)}
-    num_nodes = len(items)
-
-    if len(seq) > 1:
-        seq_nid = [iid2nid[iid] for iid in seq]
-        src = seq_nid[:-1]
-        dst = seq_nid[1:]
-    else:
-        src = th.LongTensor([])
-        dst = th.LongTensor([])
-    g = dgl.graph((src, dst), num_nodes=num_nodes)
-    g.ndata['iid'] = th.from_numpy(items)
-    label_last(g, iid2nid[seq[-1]])
-    return g
-
-def seq_to_shortcut_graph(seq):
-    items = np.unique(seq)
-    iid2nid = {iid: i for i, iid in enumerate(items)}
-    num_nodes = len(items)
-
-    seq_nid = [iid2nid[iid] for iid in seq]
-    counter = Counter(
-        [(seq_nid[i], seq_nid[j]) for i in range(len(seq)) for j in range(i, len(seq))]
-    )
-    edges = counter.keys()
-    src, dst = zip(*edges)
-
-    g = dgl.graph((src, dst), num_nodes=num_nodes)
-    return g
-
 def seq_to_session_graph(seq):
     items = np.unique(seq)
     iid2nid = {iid: i for i, iid in enumerate(items)}
