@@ -1,2 +1,53 @@
 # GNG-ODE
-Code will be available soon.
+This is the code for CIKM 2022 paper Evolutionary Preference Learning via Graph Nested GRU ODE for Session-based Recommendation. 
+
+## Dataset
+
+Download and extract the following datasets and put the files in the dataset folder named under datasets/$DATASETNAME
+
+* [Gowalla](http://snap.stanford.edu/data/loc-gowalla_totalCheckins.txt.gz)
+* [Tmall](https://github.com/CCIIPLab/GCE-GNN/tree/master/datasets/Tmall)
+* [Nowplaying](https://github.com/CCIIPLab/GCE-GNN/tree/master/datasets/Nowplaying)
+
+Then run the code in src/utils/data/preprocess to process them.
+
+## Environment
+
+```
+
+```
+
+
+## Usage
+
+### For Gowalla
+
+```
+python -u scripts/main_ode.py --dataset-dir ../datasets/gowalla --gnn GATConv
+```
+
+### For Tmall
+
+```
+python -u scripts/main_ode.py --dataset-dir ../datasets/tmall --gnn GATConv --solver dopri5
+```
+
+### For Nowplaying
+
+```
+python -u scripts/main_ode.py --dataset-dir ../datasets/nowplaying --gnn GATConv 
+```
+
+Generally using dopri5 solver will increase the performance and bing longer training time.
+
+
+## Citation
+
+```
+@inproceedings{Guo2022EvolutionaryPL,
+    title={Evolutionary Preference Learning via Graph Nested GRU ODE for Session-based Recommendation},
+    author={Jiayan Guo and Peiyan Zhang and Chaozhuo Li and Xing Xie and Yan Zhang and Sunghun Kim},
+    booktitle={Proceedings of the 31st ACM International Conference on Information \& Knowledge Management},
+    year={2022}
+}
+```
