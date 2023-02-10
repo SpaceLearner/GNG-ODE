@@ -38,7 +38,7 @@ python -u scripts/main_ode.py --dataset-dir ../datasets/tmall --gnn GATConv --so
 python -u scripts/main_ode.py --dataset-dir ../datasets/nowplaying --gnn GATConv 
 ```
 
-Generally using dopri5 solver will increase the performance and bing longer training time.
+Generally using dopri5 solver will increase the performance and bring longer training time.
 
 
 ## Citation
