@@ -43,6 +43,8 @@ Generally using dopri5 solver will increase the performance and bring longer tra
 
 ## Citation
 
+[[https://arxiv.org/pdf/2206.12779.pdf](https://arxiv.org/pdf/2206.12779.pdf)]
+
 ```
 @inproceedings{Guo2022EvolutionaryPL,
     title={Evolutionary Preference Learning via Graph Nested GRU ODE for Session-based Recommendation},
