@@ -20,15 +20,15 @@ def seed_torch(seed=42):
     
 seed_torch(123)
 
-def get_freer_gpu():
-    os.system('nvidia-smi -q -d Memory |grep -A4 GPU|grep Free >tmp')
-    memory_available = [int(x.split()[2]) for x in open('tmp', 'r').readlines()]
-    # memory_available = memory_available[1:6]
-    if len(memory_available) == 0:
-        return -1
-    return int(np.argmax(memory_available))
+# def get_freer_gpu():
+#     os.system('nvidia-smi -q -d Memory |grep -A4 GPU|grep Free >tmp')
+#     memory_available = [int(x.split()[2]) for x in open('tmp', 'r').readlines()]
+#     # memory_available = memory_available[1:6]
+#     if len(memory_available) == 0:
+#         return -1
+#     return int(np.argmax(memory_available))
 
-os.environ["CUDA_VISIBLE_DEVICES"] = str(get_freer_gpu())
+# os.environ["CUDA_VISIBLE_DEVICES"] = str(get_freer_gpu())
 
 sys.path.append('..')
 sys.path.append('../..')
